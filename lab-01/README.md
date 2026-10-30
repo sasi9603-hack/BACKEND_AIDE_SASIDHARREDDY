@@ -44,8 +44,8 @@ This project satisfies all requirements for **Lab 1: Node.js and Express server*
 ### Installation
 Clone the repository and navigate into the `lab-01` directory:
 ```bash
-git clone <your-repository-url>
-cd MERN_STACK/lab-01
+git clone https://github.com/sasi9603-hack/BACKEND_AIDE_SASIDHARREDDY.git
+cd BACKEND_AIDE_SASIDHARREDDY/lab-01
 npm install
 ```
 
