@@ -50,7 +50,7 @@ npm install
 ```
 
 ### Environment Variables
-Create a `.env` file in the root of `lab-01/` if custom configurations are needed (refer to `.env.example`):
+Create a `.env` file in the root of `lab-01/` if custom configurations are needed:
 ```env
 # Server Port (Defaults to 3000 if not specified)
 PORT=3000
