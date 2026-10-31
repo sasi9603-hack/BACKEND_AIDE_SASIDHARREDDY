@@ -7,22 +7,48 @@
 
 ---
 
-## Course Lab Index
+## Course Lab Index & Live Deployments
 
 This repository contains all laboratory exercises and coursework for the Backend Development Fundamentals module (Year II Term II). Each lab is organized into its respective folder from `lab-01` to `lab-10`.
 
-| Lab Number | Topic / Module | Folder Link | Status |
-| :---: | :--- | :--- | :---: |
-| **Lab 01** | Node.js and Express Server Fundamentals | [lab-01](./lab-01) | Completed |
-| **Lab 02** | SQLite Database and CRUD Routes | [lab-02](./lab-02) | Completed |
-| **Lab 03** | *Upcoming Lab* | `lab-03/` | Pending |
-| **Lab 04** | *Upcoming Lab* | `lab-04/` | Pending |
-| **Lab 05** | *Upcoming Lab* | `lab-05/` | Pending |
-| **Lab 06** | *Upcoming Lab* | `lab-06/` | Pending |
-| **Lab 07** | *Upcoming Lab* | `lab-07/` | Pending |
-| **Lab 08** | *Upcoming Lab* | `lab-08/` | Pending |
-| **Lab 09** | *Upcoming Lab* | `lab-09/` | Pending |
-| **Lab 10** | *Upcoming Lab* | `lab-10/` | Pending |
+| Lab Number | Topic / Module | Folder Link | Status | Live Render URL |
+| :---: | :--- | :---: | :---: | :--- |
+| **Lab 01** | Node.js and Express Server Fundamentals | [lab-01](./lab-01) | Completed | [Live Deployment (Render)](https://sasidhar-lab-01-express.onrender.com) |
+| **Lab 02** | SQLite Database and CRUD Routes | [lab-02](./lab-02) | Completed | [Live Deployment (Render)](https://sasidhar-lab-02-sqlite.onrender.com) |
+| **Lab 03** | *Upcoming Lab* | `lab-03/` | Pending | — |
+| **Lab 04** | *Upcoming Lab* | `lab-04/` | Pending | — |
+| **Lab 05** | *Upcoming Lab* | `lab-05/` | Pending | — |
+| **Lab 06** | *Upcoming Lab* | `lab-06/` | Pending | — |
+| **Lab 07** | *Upcoming Lab* | `lab-07/` | Pending | — |
+| **Lab 08** | *Upcoming Lab* | `lab-08/` | Pending | — |
+| **Lab 09** | *Upcoming Lab* | `lab-09/` | Pending | — |
+| **Lab 10** | *Upcoming Lab* | `lab-10/` | Pending | — |
+
+---
+
+## Render Deployment Quick Links & Configuration
+
+This repository is pre-configured with a **Render Blueprint** (`render.yaml`) for zero-configuration multi-service deployment.
+
+### 🌐 Quick Deployment Links
+- **Render Dashboard**: [https://dashboard.render.com](https://dashboard.render.com)
+- **New Web Service**: [https://dashboard.render.com/web/new](https://dashboard.render.com/web/new)
+- **New Blueprint**: [https://dashboard.render.com/blueprints/new](https://dashboard.render.com/blueprints/new)
+- **GitHub Repository**: [https://github.com/sasi9603-hack/BACKEND_AIDE_SASIDHARREDDY](https://github.com/sasi9603-hack/BACKEND_AIDE_SASIDHARREDDY)
+
+### 📋 Service Deployment Settings Summary
+
+| Parameter | Lab 01 (Express Basics) | Lab 02 (SQLite & CRUD) |
+| :--- | :--- | :--- |
+| **Service Type** | Web Service | Web Service |
+| **Service Name** | `sasidhar-lab-01-express` | `sasidhar-lab-02-sqlite` |
+| **Runtime** | `Node` | `Node` |
+| **Root Directory** | `lab-01` | `lab-02` |
+| **Build Command** | `npm install` | `npm install` |
+| **Start Command** | `npm start` | `npm start` |
+| **Plan** | Free | Free |
+| **Live URL** | `https://sasidhar-lab-01-express.onrender.com` | `https://sasidhar-lab-02-sqlite.onrender.com` |
+| **Primary Test Route**| `GET /` & `GET /about` | `GET /` & `GET /books/` |
 
 ---
 

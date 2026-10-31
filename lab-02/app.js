@@ -28,6 +28,22 @@ const initializeDBAndServer = async () => {
 
 initializeDBAndServer();
 
+// Welcome / health check endpoint for cloud deployment
+app.get("/", (request, response) => {
+    response.status(200).json({
+        message: "Welcome to Lab 02: SQLite Database and CRUD Routes API",
+        author: "Sasidhar Reddy",
+        section: "AIDE-313-2B",
+        endpoints: {
+            getAllBooks: "GET /books/",
+            getBookById: "GET /books/:bookId/",
+            addBook: "POST /books/",
+            updateBook: "PUT /books/:bookId/",
+            deleteBook: "DELETE /books/:bookId/"
+        }
+    });
+});
+
 // Task 4 & 5: GET /books/ - Retrieve all books
 app.get("/books/", async (request, response) => {
     try {

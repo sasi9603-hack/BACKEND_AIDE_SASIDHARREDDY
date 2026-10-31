@@ -5,7 +5,7 @@
 ---
 
 ### Live Link
-- **Deployment URL**: [https://lab-02-sqlite-crud.onrender.com](https://lab-02-sqlite-crud.onrender.com) *(or `Not applicable` if evaluating locally in development mode)*
+- **Deployment URL**: [https://sasidhar-lab-02-sqlite.onrender.com](https://sasidhar-lab-02-sqlite.onrender.com)
 > **Note**: For local evaluation, the server runs at `http://localhost:3000`. Detailed steps to run with `nodemon` or standard `node` are provided below.
 
 ---

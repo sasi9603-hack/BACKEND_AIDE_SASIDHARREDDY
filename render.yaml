@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: sasidhar-lab-01-express
+    runtime: node
+    rootDir: lab-01
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: sasidhar-lab-02-sqlite
+    runtime: node
+    rootDir: lab-02
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production

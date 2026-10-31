@@ -5,8 +5,8 @@
 ---
 
 ### Live Link
-- **Deployment URL**: [https://lab-01-node-express.onrender.com](https://lab-01-node-express.onrender.com) *(or `Not applicable` if running locally in development mode)*
-> **Note**: For local evaluation, the server runs at `http://localhost:3000`. Detailed steps to deploy to Render/Railway are included below.
+- **Deployment URL**: [https://sasidhar-lab-01-express.onrender.com](https://sasidhar-lab-01-express.onrender.com)
+> **Note**: For local evaluation, the server runs at `http://localhost:3000`. Detailed steps to deploy to Render are included in this document and the root repository guide.
 
 ---
 
