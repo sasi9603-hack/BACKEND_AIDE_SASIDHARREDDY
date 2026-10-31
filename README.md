@@ -14,7 +14,7 @@ This repository contains all laboratory exercises and coursework for the Backend
 | Lab Number | Topic / Module | Folder Link | Status |
 | :---: | :--- | :--- | :---: |
 | **Lab 01** | Node.js and Express Server Fundamentals | [lab-01](./lab-01) | Completed |
-| **Lab 02** | *Upcoming Lab* | `lab-02/` | Pending |
+| **Lab 02** | SQLite Database and CRUD Routes | [lab-02](./lab-02) | Completed |
 | **Lab 03** | *Upcoming Lab* | `lab-03/` | Pending |
 | **Lab 04** | *Upcoming Lab* | `lab-04/` | Pending |
 | **Lab 05** | *Upcoming Lab* | `lab-05/` | Pending |
