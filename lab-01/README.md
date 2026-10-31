@@ -1,6 +1,6 @@
 # Lab 1: Node.js and Express server
 
-**Sasidhar Reddy** · **Registration Number: [Your Registration Number]** · **Section: AIDE-313-2B**
+**Sasidhar Reddy** · **Registration Number: [Your Registration Number]** · **Section: AIDE-313-2B** · **Faculty: Yugandhar Gurjalwar**
 
 ---
 
