@@ -83,13 +83,32 @@ The server will be accessible at: `http://localhost:3000`
 
 ## Endpoints / CRUD Routes Table
 
-| HTTP Method | Route Path | Operation | Description | Request Body | Status Code |
-| :--- | :--- | :---: | :--- | :--- | :---: |
-| `GET` | `/books/` | **Read (All)** | Returns an array of all books ordered by ID | None | `200 OK` |
-| `GET` | `/books/:bookId/` | **Read (One)** | Returns single book details matching `bookId` | None | `200 OK` / `404` |
-| `POST` | `/books/` | **Create** | Inserts a new book record into the database | JSON `{ title, author, price, pages }` | `201 Created` |
-| `PUT` | `/books/:bookId/` | **Update** | Modifies fields of an existing book by `bookId` | JSON `{ title, author, price, pages }` | `200 OK` / `404` |
-| `DELETE` | `/books/:bookId/` | **Delete** | Removes a book record from database by `bookId` | None | `200 OK` / `404` |
+| HTTP Method | Route Path | Operation | Description | Request Body | Status Code | Live Test Link |
+| :--- | :--- | :---: | :--- | :--- | :---: | :--- |
+| `GET` | `/` | **Health / Info** | API Welcome & endpoints overview | None | `200 OK` | [Live Link](https://sasidhar-lab-02-sqlite.onrender.com/) |
+| `GET` | `/books/` | **Read (All)** | Returns an array of all books ordered by ID | None | `200 OK` | [Live Link](https://sasidhar-lab-02-sqlite.onrender.com/books/) |
+| `GET` | `/books/:bookId/` | **Read (One)** | Returns single book details matching `bookId` | None | `200 OK` / `404` | [Live Link (ID: 1)](https://sasidhar-lab-02-sqlite.onrender.com/books/1/) |
+| `POST` | `/books/` | **Create** | Inserts a new book record into the database | JSON `{ title, author, price, pages }` | `201 Created` | *(Use Postman / curl)* |
+| `PUT` | `/books/:bookId/` | **Update** | Modifies fields of an existing book by `bookId` | JSON `{ title, author, price, pages }` | `200 OK` / `404` | *(Use Postman / curl)* |
+| `DELETE` | `/books/:bookId/` | **Delete** | Removes a book record from database by `bookId` | None | `200 OK` / `404` | *(Use Postman / curl)* |
+
+> **Note on Testing POST, PUT, and DELETE**:
+> Web browser hyperlinks only perform HTTP `GET` requests. To test mutating operations (`POST`, `PUT`, `DELETE`) on the live Render deployment, use **Postman** (see [Screenshots](#screenshots-of-working-output)) or copy the terminal commands below:
+> 
+> ```bash
+> # 1. Create a Book (POST)
+> curl -X POST https://sasidhar-lab-02-sqlite.onrender.com/books/ \
+>   -H "Content-Type: application/json" \
+>   -d '{"title": "Clean Code", "author": "Robert C. Martin", "price": 650, "pages": 464}'
+>
+> # 2. Update a Book (PUT)
+> curl -X PUT https://sasidhar-lab-02-sqlite.onrender.com/books/1/ \
+>   -H "Content-Type: application/json" \
+>   -d '{"price": 499}'
+>
+> # 3. Delete a Book (DELETE)
+> curl -X DELETE https://sasidhar-lab-02-sqlite.onrender.com/books/1/
+> ```
 
 ---
 

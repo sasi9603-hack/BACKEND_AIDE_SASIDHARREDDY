@@ -82,12 +82,12 @@ The plain server will be accessible at: `http://localhost:3000`
 
 ## Endpoints Table
 
-| HTTP Method | Endpoint Path | Description | Expected Status Code | Content-Type |
-| :--- | :--- | :--- | :---: | :--- |
-| `GET` | `/` | Welcome banner message confirming server availability | `200 OK` | `text/html; charset=utf-8` |
-| `GET` | `/about` | Returns student details (name and section) as structured JSON | `200 OK` | `application/json; charset=utf-8` |
-| `GET` | `/time` | Returns the current server timestamp using JavaScript `new Date()` | `200 OK` | `application/json; charset=utf-8` |
-| `GET` / `ALL` | `*` (Any unknown route) | Catch-all 404 handler returning route not found message | `404 Not Found` | `text/html; charset=utf-8` |
+| HTTP Method | Endpoint Path | Description | Expected Status Code | Content-Type | Live Test Link |
+| :--- | :--- | :--- | :---: | :--- | :--- |
+| `GET` | `/` | Welcome banner message confirming server availability | `200 OK` | `text/html; charset=utf-8` | [Live Link](https://sasidhar-lab-01-express.onrender.com/) |
+| `GET` | `/about` | Returns student details (name and section) as structured JSON | `200 OK` | `application/json; charset=utf-8` | [Live Link](https://sasidhar-lab-01-express.onrender.com/about) |
+| `GET` | `/time` | Returns the current server timestamp using JavaScript `new Date()` | `200 OK` | `application/json; charset=utf-8` | [Live Link](https://sasidhar-lab-01-express.onrender.com/time) |
+| `GET` / `ALL` | `*` (Any unknown route) | Catch-all 404 handler returning route not found message | `404 Not Found` | `text/html; charset=utf-8` | [Live Test (404)](https://sasidhar-lab-01-express.onrender.com/unknown) |
 
 ---
 
