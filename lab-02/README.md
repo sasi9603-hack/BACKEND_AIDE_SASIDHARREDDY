@@ -93,7 +93,7 @@ The server will be accessible at: `http://localhost:3000`
 | `DELETE` | `/books/:bookId/` | **Delete** | Removes a book record from database by `bookId` | None | `200 OK` / `404` | *(Use Postman / curl)* |
 
 > **Note on Testing POST, PUT, and DELETE**:
-> Web browser hyperlinks only perform HTTP `GET` requests. To test mutating operations (`POST`, `PUT`, `DELETE`) on the live Render deployment, use **Postman** (see [Screenshots](#screenshots-of-working-output)) or copy the terminal commands below:
+> Web browser hyperlinks only perform HTTP `GET` requests. To test mutating operations (`POST`, `PUT`, `DELETE`) on the local or live Render deployment, use **Bruno** (see [Screenshots](#screenshots-of-working-output)) or copy the terminal commands below:
 > 
 > ```bash
 > # 1. Create a Book (POST)
@@ -116,23 +116,23 @@ The server will be accessible at: `http://localhost:3000`
 
 ### 1. GET /books/ (Read All Books)
 Fetches the full collection of book records from the SQLite database.
-![Postman GET All Books](screenshots/postman-get-all-books.png)
+![Bruno GET All Books](screenshots/bruno-get-all-books.png)
 
 ### 2. GET /books/:bookId/ (Read Single Book)
 Retrieves a specific book by ID (`GET /books/1/`).
-![Postman GET Single Book](screenshots/postman-get-single-book.png)
+![Bruno GET Single Book](screenshots/bruno-get-single-book.png)
 
 ### 3. POST /books/ (Create / Add Book)
-Inserts a new book into the database (`201 Created`) returning the auto-generated `bookId: 11`.
-![Postman POST Add Book](screenshots/postman-post-book.png)
+Inserts a new book into the database (`201 Created`) returning the auto-generated `bookId`.
+![Bruno POST Add Book](screenshots/bruno-post-book.png)
 
 ### 4. PUT /books/:bookId/ (Update Book)
 Modifies existing book attributes (`PUT /books/2/`) updating price and pages.
-![Postman PUT Update Book](screenshots/postman-put-book.png)
+![Bruno PUT Update Book](screenshots/bruno-put-book.png)
 
 ### 5. DELETE /books/:bookId/ (Delete Book)
 Removes a book record (`DELETE /books/10/`) from the database.
-![Postman DELETE Book](screenshots/postman-delete-book.png)
+![Bruno DELETE Book](screenshots/bruno-delete-book.png)
 
 ### 6. SQLite CLI Verification
 Direct CLI query output (`SELECT * FROM book;`) confirming database state changes after POST, PUT, and DELETE.
@@ -247,27 +247,7 @@ app.delete("/books/:bookId/", async (request, response) => {
 });
 ```
 
----
 
-## Viva Questions & Model Answers
-
-### 1. Why await the database call?
-- Database queries (reading from disk, executing SQL parsing, fetching rows) are I/O-bound asynchronous operations in Node.js.
-- Because Node.js runs on a single-threaded event loop, blocking operations must never freeze execution.
-- Using `await` suspends execution of the enclosing `async` function until the Promise resolves, ensuring the server does not attempt to read or send response data before the database query has completed, while simultaneously allowing the event loop to continue handling other requests concurrently.
-
-### 2. What is SQL injection and how do placeholders prevent it?
-- **SQL Injection (SQLi)** occurs when untrusted user input is directly concatenated into a raw SQL query string. An attacker can inject malicious SQL syntax (e.g., `' OR '1'='1' --` or `'; DROP TABLE book; --`) altering query logic to expose, mutate, or destroy data.
-- **How `?` placeholders prevent it**:
-  - Parameterized queries separate the **SQL query template** from the **data arguments**.
-  - The SQLite query engine compiles and plans the SQL statement structure first.
-  - User values bound to `?` placeholders are treated purely as literal string/number values, escaping all special characters automatically, making it syntactically impossible for input to be executed as SQL commands.
-
-### 3. When is PUT used instead of POST?
-- **`POST`** is typically used to create a new subordinate resource. It is **non-idempotent**; sending identical `POST` requests multiple times will create multiple new rows with distinct IDs in the database.
-- **`PUT`** is used to update or replace an existing resource identified by a specific URI (e.g., `/books/2/`). It is **idempotent**; sending the same `PUT` request multiple times with the same payload results in the exact same state in the database without creating duplicate entities.
-
----
 
 ## Notes: Problems Faced and How You Solved Them
 
