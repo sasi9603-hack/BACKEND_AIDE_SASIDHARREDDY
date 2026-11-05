@@ -9,7 +9,6 @@ app.use(express.json());
 const dbPath = path.join(__dirname, "books.db");
 let db = null;
 
-// Task 3: initializeDBAndServer async function that opens DB and starts server
 const initializeDBAndServer = async () => {
     try {
         db = await open({
@@ -28,7 +27,6 @@ const initializeDBAndServer = async () => {
 
 initializeDBAndServer();
 
-// Welcome / health check endpoint for cloud deployment
 app.get("/", (request, response) => {
     response.status(200).json({
         message: "Welcome to Lab 02: SQLite Database and CRUD Routes API",
@@ -44,7 +42,6 @@ app.get("/", (request, response) => {
     });
 });
 
-// Task 4 & 5: GET /books/ - Retrieve all books
 app.get("/books/", async (request, response) => {
     try {
         const getBooksQuery = `
@@ -62,7 +59,6 @@ app.get("/books/", async (request, response) => {
     }
 });
 
-// Task 4 & 5: GET /books/:bookId/ - Retrieve single book by ID
 app.get("/books/:bookId/", async (request, response) => {
     try {
         const { bookId } = request.params;
@@ -84,7 +80,6 @@ app.get("/books/:bookId/", async (request, response) => {
     }
 });
 
-// Task 4 & 5: POST /books/ - Add a new book
 app.post("/books/", async (request, response) => {
     try {
         const { title, author, price, pages } = request.body;
@@ -109,7 +104,6 @@ app.post("/books/", async (request, response) => {
     }
 });
 
-// Task 4 & 5: PUT /books/:bookId/ - Update an existing book
 app.put("/books/:bookId/", async (request, response) => {
     try {
         const { bookId } = request.params;
@@ -148,7 +142,6 @@ app.put("/books/:bookId/", async (request, response) => {
     }
 });
 
-// Task 4 & 5: DELETE /books/:bookId/ - Delete a book by ID
 app.delete("/books/:bookId/", async (request, response) => {
     try {
         const { bookId } = request.params;
@@ -174,7 +167,6 @@ app.delete("/books/:bookId/", async (request, response) => {
     }
 });
 
-// 404 Route Handler
 app.use((req, res) => {
     res.status(404).json({ error: "404 - Route Not Found" });
 });

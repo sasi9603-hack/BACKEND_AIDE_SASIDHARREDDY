@@ -330,3 +330,4 @@ The faculty exercises involve identifying and fixing 4 frequent backend mistakes
 3. **Inconsistent Status Codes on Mutating Actions**:
    - *Problem*: Default Express responses send `200 OK` for every status unless overridden.
    - *Solution*: Explicitly set `res.status(201)` for resource creation (`POST`), `res.status(400)` for failed validation, and `res.status(404)` when `db.get()` returns `undefined`.
+
