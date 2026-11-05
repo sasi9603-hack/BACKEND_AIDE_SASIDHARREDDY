@@ -131,7 +131,7 @@ Modifies existing book attributes (`PUT /books/2/`) updating price and pages.
 ![Bruno PUT Update Book](screenshots/bruno-put-book.png)
 
 ### 5. DELETE /books/:bookId/ (Delete Book)
-Removes a book record (`DELETE /books/10/`) from the database.
+Removes a book record (`DELETE /books/2/`) from the database.
 ![Bruno DELETE Book](screenshots/bruno-delete-book.png)
 
 ### 6. SQLite CLI Verification
