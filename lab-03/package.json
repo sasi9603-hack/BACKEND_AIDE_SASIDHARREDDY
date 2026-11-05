@@ -1,0 +1,31 @@
+{
+  "name": "lab-03",
+  "version": "1.0.0",
+  "description": "Lab 3: REST API, query parameters, validation, debugging - Backend Development Fundamentals",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node setup-db.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest-api",
+    "sqlite",
+    "sqlite3",
+    "query-parameters",
+    "validation",
+    "debugging"
+  ],
+  "author": "Sasidhar Reddy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
