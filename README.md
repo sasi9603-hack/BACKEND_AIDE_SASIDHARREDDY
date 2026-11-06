@@ -1,9 +1,17 @@
 # Backend Development Fundamentals (MERN Stack)
 ---
-|**Student Name**: Sasidhar Reddy  |
-|**Section**: AIDE-313-2B  |
-|**Academic Term**: Year II Term II · Aurora  |
-|**Faculty**: Yugandhar Gurjalwar  |
+| Field | Details | Field | Details |
+| :--- | :--- | :--- | :--- |
+| **Student Name** | V. Sasidhar Reddy | | |
+| **Student Registration Number** | 252U1R5130 | **Class & Section** | AIDE - 2B & 313 |
+| **Study Level** <br>`UG/PG/Doctorate` | UG | **Year & Term** | II & II |
+| **TOPIC** | Lab 3: REST API, query parameters, validation, debugging | **Course** | Backend Development Fundamentals |
+| **Faculty Name** | Yugandhar Gurjalwar | | |
+
+| Field | Details |
+| :--- | :--- |
+| **Name of the Assessment** | Lab Report 3 |
+| **Date of Submission** | 06-11-2026 |
 ---
 ---
 
