@@ -1,10 +1,10 @@
 # Backend Development Fundamentals (MERN Stack)
-
-| **Student Name**: Sasidhar Reddy  |
+---
+|**Student Name**: Sasidhar Reddy  |
 |**Section**: AIDE-313-2B  |
 |**Academic Term**: Year II Term II · Aurora  |
 |**Faculty**: Yugandhar Gurjalwar  |
-
+---
 ---
 
 ## Course Lab Index & Live Deployments
