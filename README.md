@@ -51,7 +51,7 @@ This repository is pre-configured with a **Render Blueprint** (`render.yaml`) fo
 | **Build Command** | `npm install` | `npm install` | `npm install` |
 | **Start Command** | `npm start` | `npm start` | `npm start` |
 | **Plan** | Free | Free | Free |
-| **Live URL** | `https://sasidhar-lab-01-express.onrender.com` | `https://sasidhar-lab-02-sqlite.onrender.com` | `https://sasidhar-lab-03-api.onrender.com` |
+| **Live URL** | `https://sasidhar-lab-01-express.onrender.com` | `https://sasidhar-lab-02-sqlite.onrender.com` | `https://backend-aide-sasidharreddy.onrender.com` |
 | **Primary Test Route**| `GET /` & `GET /about` | `GET /` & `GET /books/` | `GET /` & `GET /books` |
 
 ---

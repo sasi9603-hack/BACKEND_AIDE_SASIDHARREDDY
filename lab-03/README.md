@@ -16,7 +16,7 @@
 ---
 
 ### Live Link
-- **Deployment URL**: [https://sasidhar-lab-03-api.onrender.com](https://backend-aide-sasidharreddy.onrender.com)
+- **Deployment URL**: [https://backend-aide-sasidharreddy.onrender.com](https://backend-aide-sasidharreddy.onrender.com)
 > **Note**: For local evaluation, the server runs at `http://localhost:3000`. Detailed steps to deploy to Render via the pre-configured root `render.yaml` blueprint are included below.
 
 ---
@@ -130,39 +130,43 @@ node test-api.js
 
 ## Screenshots of Working Output
 
-### 1. Partial Title Search (`GET /books?search_q=Harry`)
-Searches books matching partial string using SQL `LIKE %Harry%`.
-![Bruno Search Books]()
+### 1. API Root Overview (GET /)
+Live verification of API documentation and available endpoint routes on Render.
+![Bruno Root Overview](screenshots/bruno-root-overview.png)
 
-### 2. Sorting & Pagination (`GET /books?order_by=price&order=DESC&limit=3`)
+### 2. Partial Title Search (GET /books?search_q=Harry)
+Searches books matching partial string using SQL LIKE %Harry% on live Render deployment.
+![Bruno Search Books](screenshots/bruno-search-books.png)
+
+### 3. Sorting & Pagination (`GET /books?order_by=price&order=DESC&limit=3`)
 Orders results by price in descending order, limited to 3 records.
 ![Bruno Sort Books](screenshots/bruno-sort-books.png)
 
-### 3. Price Range Filtering (`GET /books?min_price=300&max_price=450`)
+### 4. Price Range Filtering (`GET /books?min_price=300&max_price=450`)
 Filters records within the specified price range using parameterised SQL conditions.
 ![Bruno Price Filter](screenshots/bruno-price-filter.png)
 
-### 4. Retrieve Single Book (`GET /books/1`)
+### 5. Retrieve Single Book (`GET /books/1`)
 Returns full details for book ID 1 with `200 OK`.
 ![Bruno Get Single Book](screenshots/bruno-get-single-book.png)
 
-### 5. Missing Record Error Handling (`GET /books/999`)
+### 6. Missing Record Error Handling (`GET /books/999`)
 Returns consistent JSON `{ "message": "Book not found" }` with `404 Not Found`.
 ![Bruno 404 Error](screenshots/bruno-get-404-error.png)
 
-### 6. Create Book Success (`POST /books`)
+### 7. Create Book Success (`POST /books`)
 Inserts a new book into the database returning `201 Created` with generated `bookId`.
 ![Bruno POST Success](screenshots/bruno-post-book-success.png)
 
-### 7. Input Validation Rejection (`POST /books` with Missing Title / Non-numeric Price)
+### 8. Input Validation Rejection (`POST /books` with Missing Title / Non-numeric Price)
 Rejects invalid payload with `400 Bad Request` and clear error description.
 ![Bruno POST 400 Validation](screenshots/bruno-post-400-validation.png)
 
-### 8. Update Book Details (`PUT /books/2`)
+### 9. Update Book Details (`PUT /books/2`)
 Updates existing record returning `200 OK` and `{ "message": "Book updated successfully" }`.
 ![Bruno PUT Book](screenshots/bruno-put-book.png)
 
-### 9. Delete Book (`DELETE /books/10`)
+### 10. Delete Book (`DELETE /books/10`)
 Removes book from database returning `200 OK` and `{ "message": "Book deleted successfully" }`.
 ![Bruno DELETE Book](screenshots/bruno-delete-book.png)
 
