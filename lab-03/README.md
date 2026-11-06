@@ -132,7 +132,7 @@ node test-api.js
 
 ### 1. Partial Title Search (`GET /books?search_q=Harry`)
 Searches books matching partial string using SQL `LIKE %Harry%`.
-![Bruno Search Books](C:\Users\sasid\OneDrive\Pictures\Screenshots)
+![Bruno Search Books]()
 
 ### 2. Sorting & Pagination (`GET /books?order_by=price&order=DESC&limit=3`)
 Orders results by price in descending order, limited to 3 records.
