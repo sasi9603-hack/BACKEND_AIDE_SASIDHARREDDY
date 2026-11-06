@@ -15,7 +15,7 @@ This repository contains all laboratory exercises and coursework for the Backend
 | :---: | :--- | :---: | :---: | :--- |
 | **Lab 01** | Node.js and Express Server Fundamentals | [lab-01](./lab-01) | Completed | [Live Deployment (Render)](https://sasidhar-lab-01-express.onrender.com) |
 | **Lab 02** | SQLite Database and CRUD Routes | [lab-02](./lab-02) | Completed | [Live Deployment (Render)](https://sasidhar-lab-02-sqlite.onrender.com) |
-| **Lab 03** | REST API, Query Parameters, Validation & Debugging | [lab-03](./lab-03) | Completed | [Live Deployment (Render)](https://sasidhar-lab-03-api.onrender.com) |
+| **Lab 03** | REST API, Query Parameters, Validation & Debugging | [lab-03](./lab-03) | Completed | [Live Deployment (Render)](https://backend-aide-sasidharreddy.onrender.com) |
 | **Lab 04** | *Upcoming Lab* | `lab-04/` | Pending | — |
 | **Lab 05** | *Upcoming Lab* | `lab-05/` | Pending | — |
 | **Lab 06** | *Upcoming Lab* | `lab-06/` | Pending | — |
