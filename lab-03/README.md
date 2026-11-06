@@ -16,7 +16,7 @@
 ---
 
 ### Live Link
-- **Deployment URL**: [https://sasidhar-lab-03-api.onrender.com](https://sasidhar-lab-03-api.onrender.com)
+- **Deployment URL**: [https://sasidhar-lab-03-api.onrender.com](https://backend-aide-sasidharreddy.onrender.com)
 > **Note**: For local evaluation, the server runs at `http://localhost:3000`. Detailed steps to deploy to Render via the pre-configured root `render.yaml` blueprint are included below.
 
 ---
