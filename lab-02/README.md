@@ -4,7 +4,7 @@
 | **Student Name** | V. Sasidhar Reddy | | |
 | **Student Registration Number** | 252U1R5130 | **Class & Section** | AIDE - 2B & 313 |
 | **Study Level** <br>`UG/PG/Doctorate` | UG | **Year & Term** | II & II |
-| | **Course** | Backend Development Fundamentals |
+| **Course** | Backend Development Fundamentals |
 | **Faculty Name** | Yugandhar Gurjalwar |
 
 | Field | Details |
