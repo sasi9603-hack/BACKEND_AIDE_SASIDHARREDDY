@@ -1,6 +1,6 @@
 # Lab 3: REST API, query parameters, validation, debugging
 
-**Sasidhar Reddy** · **Registration Number: N25H03A0964** · **Section: AIDE-313-2B** · **Faculty: Joel Prashanth D**
+**Sasidhar Reddy** · **Registration Number: N25H03A0964** · **Section: AIDE-313-2B** · **Faculty: Yugandhar Gurjalwar**
 
 ---
 
