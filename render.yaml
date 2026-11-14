@@ -31,3 +31,14 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+
+  - type: web
+    name: sasidhar-lab-04-jwt
+    runtime: node
+    rootDir: lab-04
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,194 @@
+{
+  "info": {
+    "_postman_id": "lab-04-registration-login-jwt",
+    "name": "Lab 04: Registration, Login and JWT",
+    "description": "Postman API test collection for Lab 4: Registration, Login and JWT token authentication with bcrypt and jsonwebtoken in Backend Development Fundamentals.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "jwt_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Root Directory & API Overview",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": ["{{base_url}}"],
+          "path": [""]
+        },
+        "description": "Fetches API overview and author metadata."
+      }
+    },
+    {
+      "name": "2. Register New User (Success)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"sasidhar_aide\",\n  \"name\": \"V. Sasidhar Reddy\",\n  \"password\": \"Password@2026\",\n  \"gender\": \"Male\",\n  \"location\": \"Hyderabad\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/register/",
+          "host": ["{{base_url}}"],
+          "path": ["register", ""]
+        },
+        "description": "Registers a new user and hashes password with bcrypt. Returns HTTP 200 'User created successfully'."
+      }
+    },
+    {
+      "name": "3. Register Duplicate Username (400 Rejection)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"sasidhar_aide\",\n  \"name\": \"V. Sasidhar Reddy\",\n  \"password\": \"Password@2026\",\n  \"gender\": \"Male\",\n  \"location\": \"Hyderabad\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/register/",
+          "host": ["{{base_url}}"],
+          "path": ["register", ""]
+        },
+        "description": "Attempts to register existing username; rejected with HTTP 400 'User already exists'."
+      }
+    },
+    {
+      "name": "4. Login Unknown User (400 Rejection)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"non_existent_user\",\n  \"password\": \"Password@2026\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/login/",
+          "host": ["{{base_url}}"],
+          "path": ["login", ""]
+        },
+        "description": "Attempts to log in with an unknown username; rejected with HTTP 400 'Invalid user'."
+      }
+    },
+    {
+      "name": "5. Login Wrong Password (400 Rejection)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"sasidhar_aide\",\n  \"password\": \"WrongPassword!\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/login/",
+          "host": ["{{base_url}}"],
+          "path": ["login", ""]
+        },
+        "description": "Attempts to log in with invalid password; bcrypt.compare returns false, rejected with HTTP 400 'Invalid password'."
+      }
+    },
+    {
+      "name": "6. Login Success (Returns JWT Token)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "if (jsonData.jwt_token) {",
+              "    pm.collectionVariables.set('jwt_token', jsonData.jwt_token);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"sasidhar_aide\",\n  \"password\": \"Password@2026\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/login/",
+          "host": ["{{base_url}}"],
+          "path": ["login", ""]
+        },
+        "description": "Successful authentication with bcrypt password verification, returning { jwt_token }."
+      }
+    },
+    {
+      "name": "7. Database Verification (Stores Hashes Only)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/users/",
+          "host": ["{{base_url}}"],
+          "path": ["users", ""]
+        },
+        "description": "Inspects stored user records to prove only bcrypt hashes are stored in SQLite and passwords are never exposed in plain text."
+      }
+    },
+    {
+      "name": "8. Decode Token & Verify Structure",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jwt_token\": \"{{jwt_token}}\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/decode-token/",
+          "host": ["{{base_url}}"],
+          "path": ["decode-token", ""]
+        },
+        "description": "Decodes the signed token to inspect header, payload (only username), and signature validity."
+      }
+    }
+  ]
+}
