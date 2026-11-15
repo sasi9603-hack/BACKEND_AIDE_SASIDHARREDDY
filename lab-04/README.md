@@ -155,22 +155,26 @@ Submitting credentials for a username that does not exist in the database return
 
 ### 5. Login Wrong Password (`POST /login/`)
 Submitting an incorrect password causes `bcrypt.compare` to return `false`. Authentication fails with `400 Bad Request` and `Invalid password`.
-![Postman Login Wrong Password 400](screenshots/postman-login-wrong-password-400.png)
+![Bruno Login Wrong Password 400](screenshots/bruno-login-wrong-password-400.png)
 
 ### 6. Login Success & JWT Generation (`POST /login/`)
 Submitting correct credentials verifies the bcrypt hash and issues a cryptographically signed token returning `200 OK` with `{ jwt_token }`.
-![Postman Login Success JWT](screenshots/postman-login-success-jwt.png)
+![Bruno Login Success JWT](screenshots/bruno-login-success-jwt.png)
 
-### 7. JWT Token Structure & jwt.io Decoding
+### 7. Database Security & Hashes Audit (`GET /users/`)
+Direct query of the SQLite database (`userData.db`) via the `/users/` endpoint on live Render deployment, demonstrating that all stored passwords are one-way bcrypt hashes (`$2b$10$...`) and plain-text passwords are never stored.
+![Bruno Database Hashes Verification](screenshots/bruno-database-hashes-verification.png)
+
+### 8. Token Decoding & Signature Verification (`POST /decode-token/`)
+Testing token decoding and verification on live deployment, confirming the payload contains only the `username` and the signature is cryptographically valid.
+![Bruno Decode Token Verification](screenshots/bruno-decode-token-verification.png)
+
+### 9. JWT Token Structure & jwt.io Decoding
 Inspection of the issued token on `jwt.io` demonstrating the three Base64URL-encoded parts:
 - **Header (Red)**: Algorithm (`HS256`) and Token Type (`JWT`)
 - **Payload (Purple)**: Non-sensitive claims containing **only the username** (`sasidhar_aide`) and standard timestamps (`iat`, `exp`), strictly excluding passwords
 - **Signature (Cyan)**: Cryptographic signature verified using secret key constant `AURORA_MERN_JWT_SECRET_KEY_2026`
 ![JWT.io Token Decode](screenshots/jwt-io-token-decode.png)
-
-### 8. Database Security & Hashes Audit
-Direct query of the SQLite database (`userData.db`) showing that all stored passwords are one-way bcrypt hashes (`$2b$10$...`). Passwords are never stored in plain text.
-![Database Hashes Verification](screenshots/database-hashes-verification.png)
 
 ---
 
