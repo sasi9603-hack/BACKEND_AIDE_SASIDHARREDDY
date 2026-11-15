@@ -16,7 +16,7 @@
 ---
 
 ### Live Link
-- **Deployment URL**: [https://sasidhar-lab-04-jwt.onrender.com](https://sasidhar-lab-04-jwt.onrender.com)
+- **Deployment URL**: [https://backend-aide-sasidharreddy-eg99.onrender.com](https://backend-aide-sasidharreddy-eg99.onrender.com)
 > **Note**: For local evaluation, the server runs at `http://localhost:3000`. Detailed steps to deploy to Render via the pre-configured root `render.yaml` blueprint are included below.
 
 ---
@@ -137,34 +137,38 @@ npm test
 
 ## Screenshots of Working Output
 
-### 1. User Registration Success (`POST /register/`)
+### 1. API Root Directory Overview (`GET /`)
+Live verification of API documentation, author metadata, and available endpoints on Render deployment.
+![Bruno Root Overview](screenshots/bruno-root-overview.png)
+
+### 2. User Registration Success (`POST /register/`)
 Submitting valid new user details (`username`, `name`, `password`, `gender`, `location`). Password is encrypted using `bcrypt.hash(password, 10)` and stored in the database. Returns `200 OK` with `User created successfully`.
-![Postman Register Success](screenshots/postman-register-success.png)
+![Bruno Register Success](screenshots/bruno-register-success.png)
 
-### 2. User Registration Duplicate Rejection (`POST /register/`)
+### 3. User Registration Duplicate Rejection (`POST /register/`)
 Submitting an existing username triggers a parameterised duplicate lookup. Registration is rejected with `400 Bad Request` and `User already exists`.
-![Postman Register Duplicate 400](screenshots/postman-register-duplicate-400.png)
+![Bruno Register Duplicate 400](screenshots/bruno-register-duplicate-400.png)
 
-### 3. Login Unknown User (`POST /login/`)
+### 4. Login Unknown User (`POST /login/`)
 Submitting credentials for a username that does not exist in the database returns `400 Bad Request` with `Invalid user`.
-![Postman Login Unknown User 400](screenshots/postman-login-unknown-user-400.png)
+![Bruno Login Unknown User 400](screenshots/bruno-login-unknown-user-400.png)
 
-### 4. Login Wrong Password (`POST /login/`)
+### 5. Login Wrong Password (`POST /login/`)
 Submitting an incorrect password causes `bcrypt.compare` to return `false`. Authentication fails with `400 Bad Request` and `Invalid password`.
 ![Postman Login Wrong Password 400](screenshots/postman-login-wrong-password-400.png)
 
-### 5. Login Success & JWT Generation (`POST /login/`)
+### 6. Login Success & JWT Generation (`POST /login/`)
 Submitting correct credentials verifies the bcrypt hash and issues a cryptographically signed token returning `200 OK` with `{ jwt_token }`.
 ![Postman Login Success JWT](screenshots/postman-login-success-jwt.png)
 
-### 6. JWT Token Structure & jwt.io Decoding
+### 7. JWT Token Structure & jwt.io Decoding
 Inspection of the issued token on `jwt.io` demonstrating the three Base64URL-encoded parts:
 - **Header (Red)**: Algorithm (`HS256`) and Token Type (`JWT`)
 - **Payload (Purple)**: Non-sensitive claims containing **only the username** (`sasidhar_aide`) and standard timestamps (`iat`, `exp`), strictly excluding passwords
 - **Signature (Cyan)**: Cryptographic signature verified using secret key constant `AURORA_MERN_JWT_SECRET_KEY_2026`
 ![JWT.io Token Decode](screenshots/jwt-io-token-decode.png)
 
-### 7. Database Security & Hashes Audit
+### 8. Database Security & Hashes Audit
 Direct query of the SQLite database (`userData.db`) showing that all stored passwords are one-way bcrypt hashes (`$2b$10$...`). Passwords are never stored in plain text.
 ![Database Hashes Verification](screenshots/database-hashes-verification.png)
 

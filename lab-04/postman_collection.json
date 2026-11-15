@@ -8,7 +8,7 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:3000",
+      "value": "https://backend-aide-sasidharreddy-eg99.onrender.com",
       "type": "string"
     },
     {
@@ -25,8 +25,12 @@
         "header": [],
         "url": {
           "raw": "{{base_url}}/",
-          "host": ["{{base_url}}"],
-          "path": [""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            ""
+          ]
         },
         "description": "Fetches API overview and author metadata."
       }
@@ -47,8 +51,13 @@
         },
         "url": {
           "raw": "{{base_url}}/register/",
-          "host": ["{{base_url}}"],
-          "path": ["register", ""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "register",
+            ""
+          ]
         },
         "description": "Registers a new user and hashes password with bcrypt. Returns HTTP 200 'User created successfully'."
       }
@@ -69,8 +78,13 @@
         },
         "url": {
           "raw": "{{base_url}}/register/",
-          "host": ["{{base_url}}"],
-          "path": ["register", ""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "register",
+            ""
+          ]
         },
         "description": "Attempts to register existing username; rejected with HTTP 400 'User already exists'."
       }
@@ -91,8 +105,13 @@
         },
         "url": {
           "raw": "{{base_url}}/login/",
-          "host": ["{{base_url}}"],
-          "path": ["login", ""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login",
+            ""
+          ]
         },
         "description": "Attempts to log in with an unknown username; rejected with HTTP 400 'Invalid user'."
       }
@@ -113,8 +132,13 @@
         },
         "url": {
           "raw": "{{base_url}}/login/",
-          "host": ["{{base_url}}"],
-          "path": ["login", ""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login",
+            ""
+          ]
         },
         "description": "Attempts to log in with invalid password; bcrypt.compare returns false, rejected with HTTP 400 'Invalid password'."
       }
@@ -149,8 +173,13 @@
         },
         "url": {
           "raw": "{{base_url}}/login/",
-          "host": ["{{base_url}}"],
-          "path": ["login", ""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login",
+            ""
+          ]
         },
         "description": "Successful authentication with bcrypt password verification, returning { jwt_token }."
       }
@@ -162,8 +191,13 @@
         "header": [],
         "url": {
           "raw": "{{base_url}}/users/",
-          "host": ["{{base_url}}"],
-          "path": ["users", ""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "users",
+            ""
+          ]
         },
         "description": "Inspects stored user records to prove only bcrypt hashes are stored in SQLite and passwords are never exposed in plain text."
       }
@@ -184,8 +218,13 @@
         },
         "url": {
           "raw": "{{base_url}}/decode-token/",
-          "host": ["{{base_url}}"],
-          "path": ["decode-token", ""]
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "decode-token",
+            ""
+          ]
         },
         "description": "Decodes the signed token to inspect header, payload (only username), and signature validity."
       }

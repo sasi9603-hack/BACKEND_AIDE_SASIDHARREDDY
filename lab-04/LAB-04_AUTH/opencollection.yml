@@ -22,4 +22,4 @@ extensions:
     presets:
       request:
         type: http
-        url: http://localhost:3000
+        url: https://backend-aide-sasidharreddy-eg99.onrender.com

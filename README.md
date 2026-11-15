@@ -20,7 +20,7 @@ This repository contains all laboratory exercises and coursework for the Backend
 | **Lab 01** | Node.js and Express Server Fundamentals | [lab-01](./lab-01) | Completed | [Live Deployment (Render)](https://sasidhar-lab-01-express.onrender.com) |
 | **Lab 02** | SQLite Database and CRUD Routes | [lab-02](./lab-02) | Completed | [Live Deployment (Render)](https://sasidhar-lab-02-sqlite.onrender.com) |
 | **Lab 03** | REST API, Query Parameters, Validation & Debugging | [lab-03](./lab-03) | Completed | [Live Deployment (Render)](https://backend-aide-sasidharreddy.onrender.com) |
-| **Lab 04** | Registration, Login and JWT Authentication | [lab-04](./lab-04) | Completed | [Live Deployment (Render)](https://sasidhar-lab-04-jwt.onrender.com) |
+| **Lab 04** | Registration, Login and JWT Authentication | [lab-04](./lab-04) | Completed | [Live Deployment (Render)](https://backend-aide-sasidharreddy-eg99.onrender.com) |
 | **Lab 05** | *Upcoming Lab* | `lab-05/` | Pending | — |
 | **Lab 06** | *Upcoming Lab* | `lab-06/` | Pending | — |
 | **Lab 07** | *Upcoming Lab* | `lab-07/` | Pending | — |
@@ -51,7 +51,7 @@ This repository is pre-configured with a **Render Blueprint** (`render.yaml`) fo
 | **Build Command** | `npm install` | `npm install` | `npm install` | `npm install` |
 | **Start Command** | `npm start` | `npm start` | `npm start` | `npm start` |
 | **Plan** | Free | Free | Free | Free |
-| **Live URL** | `https://sasidhar-lab-01-express.onrender.com` | `https://sasidhar-lab-02-sqlite.onrender.com` | `https://backend-aide-sasidharreddy.onrender.com` | `https://sasidhar-lab-04-jwt.onrender.com` |
+| **Live URL** | `https://sasidhar-lab-01-express.onrender.com` | `https://sasidhar-lab-02-sqlite.onrender.com` | `https://backend-aide-sasidharreddy.onrender.com` | `https://backend-aide-sasidharreddy-eg99.onrender.com` |
 | **Primary Test Route**| `GET /` & `GET /about` | `GET /` & `GET /books/` | `GET /` & `GET /books` | `POST /register/` & `POST /login/` |
 
 ---
