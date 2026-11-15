@@ -169,13 +169,6 @@ Direct query of the SQLite database (`userData.db`) via the `/users/` endpoint o
 Testing token decoding and verification on live deployment, confirming the payload contains only the `username` and the signature is cryptographically valid.
 ![Bruno Decode Token Verification](screenshots/bruno-decode-token-verification.png)
 
-### 9. JWT Token Structure & jwt.io Decoding
-Inspection of the issued token on `jwt.io` demonstrating the three Base64URL-encoded parts:
-- **Header (Red)**: Algorithm (`HS256`) and Token Type (`JWT`)
-- **Payload (Purple)**: Non-sensitive claims containing **only the username** (`sasidhar_aide`) and standard timestamps (`iat`, `exp`), strictly excluding passwords
-- **Signature (Cyan)**: Cryptographic signature verified using secret key constant `AURORA_MERN_JWT_SECRET_KEY_2026`
-![JWT.io Token Decode](screenshots/jwt-io-token-decode.png)
-
 ---
 
 ## Task Walkthrough & Implementation Details
